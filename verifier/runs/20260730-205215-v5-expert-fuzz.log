@@ -1,0 +1,61 @@
+[20:52:15] seed=9901 sessions=4 budget=45.0min targets=[200.0,500.0] dsf=1.5
+[20:55:22] s1 g1: LOSE at 174s/462s verdict=GAMBLE blasts=[(np.int64(6), np.int64(27))] guess_p=0.09667738766502039 misreads=0
+[20:56:46] s0 g1: win 248s/246s
+[20:57:37] s3 g1: win 298s/294s
+[20:58:26] s2 g1: win 354s/354s
+[20:59:12] s1 g2: win 229s/227s
+[21:00:11] s0 g2: LOSE at 203s/249s verdict=GAMBLE blasts=[(np.int64(12), np.int64(21))] guess_p=0.0489734413260501 misreads=0
+[21:03:42] s1 g3: LOSE at 268s/380s verdict=GAMBLE blasts=[(np.int64(9), np.int64(7))] guess_p=0.16302452677875842 misreads=0
+[21:03:43] s2 g2: win 316s/314s
+[21:05:24] s0 g3: LOSE at 312s/431s verdict=GAMBLE blasts=[(np.int64(11), np.int64(10))] guess_p=0.07605925363019857 misreads=0
+[21:05:35] s3 g2: win 477s/472s
+[21:08:17] s1 g4: LOSE at 273s/276s verdict=GAMBLE blasts=[(np.int64(1), np.int64(1))] guess_p=0.3333333333333333 misreads=0
+[21:10:38] s3 g3: win 303s/299s
+[21:11:43] s2 g3: LOSE at 479s/485s verdict=GAMBLE blasts=[(np.int64(15), np.int64(1))] guess_p=0.3333333333333333 misreads=0
+[21:13:09] s0 g4: LOSE at 464s/466s verdict=GAMBLE blasts=[(np.int64(14), np.int64(22))] guess_p=0.25 misreads=0
+[21:13:30] s1 g5: win 313s/313s
+[21:15:04] s3 g4: LOSE at 264s/266s verdict=GAMBLE blasts=[(np.int64(14), np.int64(0))] guess_p=0.25 misreads=0
+[21:15:08] s2 g4: win 204s/204s
+[21:17:05] s0 g5: win 234s/226s
+[21:17:07] s1 g6: win 215s/210s
+[21:17:26] s0 g6: LOSE at 21s/367s verdict=GAMBLE blasts=[(np.int64(5), np.int64(12))] guess_p=0.10673196108324585 misreads=0
+[21:20:01] s3 g5: win 296s/297s
+[21:21:27] s1 g7: win 260s/255s
+[21:21:54] s2 g5: win 404s/405s
+[21:25:15] s0 g7: win 468s/468s
+[21:26:02] s3 g6: win 361s/361s
+[21:27:00] s2 g6: LOSE at 305s/314s verdict=GAMBLE blasts=[(np.int64(0), np.int64(20))] guess_p=0.3333333333333333 misreads=0
+[21:29:32] s1 g8: win 484s/484s
+[21:30:04] s3 g7: win 241s/242s
+[21:30:13] s1 g9: LOSE at 39s/290s verdict=GAMBLE blasts=[(np.int64(11), np.int64(19))] guess_p=0.10936580147805403 misreads=0
+[21:30:37] s0 g8: LOSE at 321s/331s verdict=GAMBLE blasts=[(np.int64(15), np.int64(1))] guess_p=0.3333333333333333 misreads=0
+[21:31:50] s2 g7: LOSE at 288s/330s verdict=GAMBLE blasts=[(np.int64(10), np.int64(27))] guess_p=0.13350047007207771 misreads=0
+[21:33:43] s3 g8: win 218s/218s
+[21:34:03] s3 g9: LOSE at 19s/331s verdict=GAMBLE blasts=[(np.int64(6), np.int64(12))] guess_p=0.04349909784350273 misreads=0
+[21:34:32] s3 g10: LOSE at 27s/217s verdict=GAMBLE blasts=[(np.int64(7), np.int64(17))] guess_p=0.13734453025650567 misreads=0
+[21:38:16] s1 g10: win 482s/483s
+[21:38:20] s2 g8: win 390s/389s
+[21:38:20] s0 g9: win 463s/463s
+[21:40:47] s3 g11: win 375s/375s
+[21:40:49] ---- summary ----
+[21:40:49] s0: {"events": [{"game": 1, "target": 246.5, "res": "win", "elapsed": 248.4}, {"game": 2, "target": 248.6, "res": "lose", "elapsed": 202.8, "loss": {"blasts": [[12, 21]], "post_mines": 19, "post_flags": 79, "pre_flags": 79, "actions": {"clicks": [], "flags": [], "guess": [12, 21], "level": 2}, "misreads": [], "guess_p": 0.0489734413260501, "verdict": "GAMBLE"}}, {"game": 3, "target": 430.9, "res": "lose", "elapsed": 311.9, "loss": {"blasts": [[11, 10]], "post_mines": 35, "post_flags": 63, "pre_flags": 63, "actions": {"clicks": [], "flags": [], "guess": [11, 10], "level": 2}, "misreads": [], "guess_p": 0.07605925363019857, "verdict": "GAMBLE"}}, {"game": 4, "target": 465.8, "res": "lose", "elapsed": 464.1, "loss": {"blasts": [[14, 22]], "post_mines": 1, "post_flags": 97, "pre_flags": 97, "actions": {"clicks": [], "flags": [], "guess": [14, 22], "level": 2}, "misreads": [], "guess_p": 0.25, "verdict": "GAMBLE"}}, {"game": 5, "target": 226.3, "res": "win", "elapsed": 234.3}, {"game": 6, "target": 367.2, "res": "lose", "elapsed": 20.5, "loss": {"blasts": [[5, 12]], "post_mines": 93, "post_flags": 5, "pre_flags": 5, "actions": {"clicks": [], "flags": [], "guess": [5, 12], "level": 2}, "misreads": [], "guess_p": 0.10673196108324585, "verdict": "GAMBLE"}}, {"game": 7, "target": 467.9, "res": "win", "elapsed": 467.6}, {"game": 8, "target": 331.5, "res": "lose", "elapsed": 320.8, "loss": {"blasts": [[15, 1]], "post_mines": 7, "post_flags": 91, "pre_flags": 90, "actions": {"clicks": [], "flags": [[15, 8]], "guess": [15, 1], "level": 2}, "misreads": [], "guess_p": 0.3333333333333333, "verdict": "GAMBLE"}}, {"game": 9, "target": 463.2, "res": "win", "elapsed": 462.6}], "games": 9}
+[21:40:49] s1: {"events": [{"game": 1, "target": 462.0, "res": "lose", "elapsed": 174.3, "loss": {"blasts": [[6, 27]], "post_mines": 55, "post_flags": 43, "pre_flags": 43, "actions": {"clicks": [], "flags": [], "guess": [6, 27], "level": 2}, "misreads": [], "guess_p": 0.09667738766502039, "verdict": "GAMBLE"}}, {"game": 2, "target": 227.3, "res": "win", "elapsed": 229.2}, {"game": 3, "target": 379.9, "res": "lose", "elapsed": 268.3, "loss": {"blasts": [[9, 7]], "post_mines": 37, "post_flags": 61, "pre_flags": 61, "actions": {"clicks": [], "flags": [], "guess": [9, 7], "level": 2}, "misreads": [], "guess_p": 0.16302452677875842, "verdict": "GAMBLE"}}, {"game": 4, "target": 276.0, "res": "lose", "elapsed": 273.2, "loss": {"blasts": [[1, 1]], "post_mines": 2, "post_flags": 96, "pre_flags": 96, "actions": {"clicks": [], "flags": [], "guess": [1, 1], "level": 2}, "misreads": [], "guess_p": 0.3333333333333333, "verdict": "GAMBLE"}}, {"game": 5, "target": 313.5, "res": "win", "elapsed": 312.7}, {"game": 6, "target": 209.9, "res": "win", "elapsed": 215.4}, {"game": 7, "target": 254.8, "res": "win", "elapsed": 259.7}, {"game": 8, "target": 484.4, "res": "win", "elapsed": 483.9}, {"game": 9, "target": 290.5, "res": "lose", "elapsed": 39.1, "loss": {"blasts": [[11, 19]], "post_mines": 89, "post_flags": 9, "pre_flags": 9, "actions": {"clicks": [], "flags": [], "guess": [11, 19], "level": 2}, "misreads": [], "guess_p": 0.10936580147805403, "verdict": "GAMBLE"}}, {"game": 10, "target": 483.0, "res": "win", "elapsed": 482.3}], "games": 10}
+[21:40:49] s2: {"events": [{"game": 1, "target": 353.7, "res": "win", "elapsed": 353.5}, {"game": 2, "target": 314.3, "res": "win", "elapsed": 315.6}, {"game": 3, "target": 485.2, "res": "lose", "elapsed": 478.8, "loss": {"blasts": [[15, 1]], "post_mines": 3, "post_flags": 95, "pre_flags": 95, "actions": {"clicks": [], "flags": [], "guess": [15, 1], "level": 2}, "misreads": [], "guess_p": 0.3333333333333333, "verdict": "GAMBLE"}}, {"game": 4, "target": 204.4, "res": "win", "elapsed": 204.0}, {"game": 5, "target": 405.0, "res": "win", "elapsed": 404.4}, {"game": 6, "target": 314.4, "res": "lose", "elapsed": 305.2, "loss": {"blasts": [[0, 20]], "post_mines": 6, "post_flags": 92, "pre_flags": 92, "actions": {"clicks": [], "flags": [], "guess": [0, 20], "level": 2}, "misreads": [], "guess_p": 0.3333333333333333, "verdict": "GAMBLE"}}, {"game": 7, "target": 329.5, "res": "lose", "elapsed": 287.8, "loss": {"blasts": [[10, 27]], "post_mines": 25, "post_flags": 73, "pre_flags": 73, "actions": {"clicks": [], "flags": [], "guess": [10, 27], "level": 2}, "misreads": [], "guess_p": 0.13350047007207771, "verdict": "GAMBLE"}}, {"game": 8, "target": 388.9, "res": "win", "elapsed": 389.5}], "games": 8}
+[21:40:49] s3: {"events": [{"game": 1, "target": 294.4, "res": "win", "elapsed": 298.2}, {"game": 2, "target": 472.3, "res": "win", "elapsed": 476.9}, {"game": 3, "target": 298.9, "res": "win", "elapsed": 302.7}, {"game": 4, "target": 265.8, "res": "lose", "elapsed": 263.9, "loss": {"blasts": [[14, 0]], "post_mines": 1, "post_flags": 97, "pre_flags": 97, "actions": {"clicks": [], "flags": [], "guess": [14, 0], "level": 2}, "misreads": [], "guess_p": 0.25, "verdict": "GAMBLE"}}, {"game": 5, "target": 297.0, "res": "win", "elapsed": 296.0}, {"game": 6, "target": 360.8, "res": "win", "elapsed": 360.7}, {"game": 7, "target": 241.9, "res": "win", "elapsed": 240.8}, {"game": 8, "target": 218.4, "res": "win", "elapsed": 218.0}, {"game": 9, "target": 330.6, "res": "lose", "elapsed": 19.2, "loss": {"blasts": [[6, 12]], "post_mines": 96, "post_flags": 2, "pre_flags": 2, "actions": {"clicks": [], "flags": [], "guess": [6, 12], "level": 2}, "misreads": [], "guess_p": 0.04349909784350273, "verdict": "GAMBLE"}}, {"game": 10, "target": 217.4, "res": "lose", "elapsed": 27.2, "loss": {"blasts": [[7, 17]], "post_mines": 90, "post_flags": 8, "pre_flags": 8, "actions": {"clicks": [], "flags": [], "guess": [7, 17], "level": 2}, "misreads": [], "guess_p": 0.13734453025650567, "verdict": "GAMBLE"}}, {"game": 11, "target": 375.1, "res": "win", "elapsed": 374.7}], "games": 11}
+[21:40:49] games=38 wins=23 rate=61%
+[21:40:49] loss s0 g2: GAMBLE
+[21:40:49] loss s0 g3: GAMBLE
+[21:40:49] loss s0 g4: GAMBLE
+[21:40:49] loss s0 g6: GAMBLE
+[21:40:49] loss s0 g8: GAMBLE
+[21:40:49] loss s1 g1: GAMBLE
+[21:40:49] loss s1 g3: GAMBLE
+[21:40:49] loss s1 g4: GAMBLE
+[21:40:49] loss s1 g9: GAMBLE
+[21:40:49] loss s2 g3: GAMBLE
+[21:40:49] loss s2 g6: GAMBLE
+[21:40:49] loss s2 g7: GAMBLE
+[21:40:49] loss s3 g4: GAMBLE
+[21:40:49] loss s3 g9: GAMBLE
+[21:40:49] loss s3 g10: GAMBLE
+[21:40:49] verdict: no bug evidence (15 losses, 0 suspicious)
