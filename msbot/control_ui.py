@@ -114,10 +114,16 @@ class ControlServer:
 
     # ----------------------------------------------------------
     def wait_for_start(self):
-        """Block until the user submits a target time.  Returns seconds."""
+        """Block until the user submits a target time.  Returns seconds.
+
+        A submission made *while a game is still running* is queued in
+        _pending (and the event is set); consuming it must not clear the
+        event first — that used to swallow the queued value and leave the
+        panel stuck in "waiting" forever, looking like a freeze."""
         self.state["status"] = "waiting"
-        self._event.clear()
-        self._event.wait()
+        if self._pending is None:
+            self._event.clear()
+            self._event.wait()
         t, self._pending = self._pending, None
         self.state["status"] = "playing"
         self.state["target"] = t
