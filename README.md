@@ -119,6 +119,8 @@ python sandbox_paced_test.py 18# 定时配速端到端：目标实测落在 ±10
 main.py                    Windows 入口（默认控制台模式，--cli 全速连玩）
 sandbox_e2e.py             沙箱端到端测试（Playwright 驱动真实网页）
 sandbox_paced_test.py      定时配速端到端测试（目标时间达标验证）
+sandbox_gui_fuzz.py        后台模糊验证：随机 140-1000s 目标走真实控制台
+                           链路（无头，带卡死看门狗 + 游戏中排队提交检查）
 msbot/
   vision.py                感知：棋盘定位 + 格子识别
   solver.py                决策：约束传播求解器

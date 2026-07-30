@@ -1,0 +1,27 @@
+[18:54:26] seed=20260730 sessions=5
+[18:54:26] s0: target=742s mid-post=288s
+[18:54:26] s1: target=961s
+[18:54:26] s2: target=359s
+[18:54:26] s3: target=285s mid-post=424s
+[18:54:26] s4: target=771s
+[18:54:31] s0: submitted target 742s
+[18:54:36] s1: submitted target 961s
+[18:54:40] s2: submitted target 359s
+[18:54:44] s3: submitted target 285s
+[18:54:49] s4: submitted target 771s
+[18:57:07] s3: mid-game POST 424s (queued)
+[18:59:29] s3: win elapsed=284.3s target=285s attempts=1 wander=943
+[18:59:29] s3: queued next target consumed: True
+[19:00:37] s2: win elapsed=357.4s target=359s attempts=1 wander=1199
+[19:00:42] s0: mid-game POST 288s (queued)
+[19:06:51] s0: win elapsed=739.9s target=742s attempts=1 wander=2548
+[19:06:51] s0: queued next target consumed: True
+[19:07:39] s4: win elapsed=770.4s target=771s attempts=1 wander=2539
+[19:10:36] s1: win elapsed=960.5s target=961s attempts=1 wander=3262
+[19:10:37] ---- summary ----
+[19:10:37] s0: {'res': 'win', 'elapsed': 739.9332323074341, 'attempts': 1, 'wall': 740.0551092624664, 'wander': 2548, 'queued_consumed': True}
+[19:10:37] s1: {'res': 'win', 'elapsed': 960.50528383255, 'attempts': 1, 'wall': 960.6161832809448, 'wander': 3262}
+[19:10:37] s2: {'res': 'win', 'elapsed': 357.3662202358246, 'attempts': 1, 'wall': 357.48878359794617, 'wander': 1199}
+[19:10:37] s3: {'res': 'win', 'elapsed': 284.31629180908203, 'attempts': 1, 'wall': 284.4354176521301, 'wander': 943, 'queued_consumed': True}
+[19:10:37] s4: {'res': 'win', 'elapsed': 770.3968815803528, 'attempts': 1, 'wall': 770.4974265098572, 'wander': 2539}
+[19:10:37] verdict: PASS
