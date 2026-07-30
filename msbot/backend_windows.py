@@ -30,9 +30,25 @@ _RIGHTDOWN, _RIGHTUP = 0x0008, 0x0010
 class WindowsBackend:
     def __init__(self, stop_key=STOP_KEY):
         import mss
+        self._u = ctypes.windll.user32
+        # mss captures *physical* pixels.  A DPI-unaware process gets
+        # virtualised (scaled) coordinates from GetCursorPos/SetCursorPos/
+        # GetSystemMetrics, so clicks would land at pos*scale and the
+        # corner-slam stop zone would sit off-screen.  Opt into per-monitor
+        # awareness to keep one coordinate space everywhere.  Harmless when
+        # the exe manifest already declared awareness (call just fails).
+        for set_aware in (
+                lambda: self._u.SetProcessDpiAwarenessContext(
+                    ctypes.c_void_p(-4)),          # PER_MONITOR_AWARE_V2
+                lambda: ctypes.windll.shcore.SetProcessDpiAwareness(2),
+                lambda: self._u.SetProcessDPIAware()):
+            try:
+                if set_aware():
+                    break
+            except Exception:
+                continue
         self._sct = mss.mss()
         self._mon = self._sct.monitors[1]          # primary monitor
-        self._u = ctypes.windll.user32
         self._stop_key = stop_key
         self._corner_since = None
         self._scr_w = self._u.GetSystemMetrics(0)

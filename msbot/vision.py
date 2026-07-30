@@ -6,7 +6,10 @@ classify every cell from raw pixels.
 Works for the classic-rendered board on https://www.minesweeper.cn/:
   - canvas frame : 2 px of rgb(204,204,204) then 2 px of rgb(128,128,128)
                    on the top/left; white on bottom/right
-  - cell size    : 25 x 25 px (browser zoom must stay at 100 %)
+  - cell size    : 25 x 25 px at 100 % zoom; larger pitches (OS display
+                   scaling / browser zoom) are auto-detected from the frame
+                   geometry and the board crop is resampled back to 25 px
+                   cells for classification
 
 The canvas sits at a fractional CSS offset, so the compositor renders some
 frames crisp (exact palette) and some slightly resampled (blended greys).
@@ -34,12 +37,12 @@ class BoardGeo:
     y0: int          # top edge of cell (0,0)
     rows: int
     cols: int
-    cell: int = CELL
+    cell: float = CELL      # real cell pitch; >25 under OS display scaling
 
     def center(self, r, c):
         """Absolute pixel coordinates of the centre of cell (r, c)."""
-        return (self.x0 + c * self.cell + self.cell // 2,
-                self.y0 + r * self.cell + self.cell // 2)
+        return (self.x0 + c * self.cell + self.cell / 2,
+                self.y0 + r * self.cell + self.cell / 2)
 
     def restart_point(self):
         """The smiley button sits centred ~25 px above the board."""
@@ -62,41 +65,123 @@ def _runs(mask_row):
     return out
 
 
+# the site's three standard boards: (rows, cols)
+SHAPES = ((9, 9), (16, 16), (16, 30))
+
+
+def _grid_score(a, x0, y0, rows, cols, cell):
+    """Evidence that true cell boundaries sit at x0/y0 + k*cell.
+
+    Classic cells always show a bevel / grid line at their edges (raised
+    white+grey when closed, sunken dark when open), so the pixel gradient
+    peaks on true grid lines and is flat mid-cell.  Used to disambiguate
+    border readings, e.g. a 16x16 board rendered at 37.5 px cells (150 %
+    display scaling) whose outer frame *also* divides into 24 fake 25 px
+    cells — the fake grid has lines landing mid-cell and scores lower.
+    """
+    a = np.asarray(a)
+    y1 = min(int(round(y0 + rows * cell)), a.shape[0])
+    x1 = min(int(round(x0 + cols * cell)), a.shape[1])
+    if y1 - y0 < 40 or x1 - x0 < 40:
+        return -1e9
+    reg = a[y0:y1, x0:x1].astype(np.int16)
+    gx = np.abs(np.diff(reg, axis=1)).sum(axis=2).mean(axis=0)
+    gy = np.abs(np.diff(reg, axis=0)).sum(axis=2).mean(axis=1)
+
+    def profile(prof, n, s):
+        on, off = [], []
+        for k in range(1, n):
+            i, m = int(round(k * s)), int(round(k * s + s / 2))
+            if i < len(prof):
+                on.append(prof[i])
+            if m < len(prof):
+                off.append(prof[m])
+        return float(np.mean(on) - np.mean(off)) if on and off else 0.0
+
+    return profile(gx, cols, cell) + profile(gy, rows, cell)
+
+
+def _candidates(width, height):
+    """All plausible (rows, cols, cell) interpretations of a border pair."""
+    out = []
+    for rows, cols in SHAPES:
+        cx, cy = width / cols, height / rows
+        # sane render scale (67 %..240 % zoom) and square cells
+        if 16 <= cx <= 60 and abs(cx - cy) <= 0.05 * cx:
+            out.append((rows, cols, (cx + cy) / 2.0))
+    # custom sizes rendered at the canonical 25 px
+    rf, cf = height / CELL, width / CELL
+    if abs(rf - round(rf)) <= 0.1 and abs(cf - round(cf)) <= 0.15 \
+            and round(rf) >= 8:
+        out.append((round(rf), round(cf), float(CELL)))
+    return out
+
+
+def _rows_with_run(mask, min_len):
+    """-> set of row indices that can contain a True-run >= min_len.
+
+    A row can only contain such a run if some length-`min_len` window is
+    all-True; that prefilter is one vectorised cumsum over the whole mask,
+    so the slow per-pixel `_runs` only executes on rows actually inspected.
+    """
+    cs = np.cumsum(mask, axis=1, dtype=np.int32)
+    full = (cs[:, min_len:] - cs[:, :-min_len]) == min_len
+    return set(np.nonzero(full.any(axis=1))[0].tolist())
+
+
 def locate_board(img):
     """Find the board inside an RGB screenshot (H, W, 3 uint8) -> BoardGeo|None.
 
     The canvas top border is a long horizontal run of ~rgb(128) grey; the
-    bottom border is a matching white run.  The pair must line up in x,
-    have the same length and span an integral number of 25 px cells — this
-    rejects the similar-looking header frame around the counters/smiley.
+    bottom border is a matching white run.  The pair must line up in x and
+    have the same length.  A frame can correspond to several cell grids
+    (the real one, plus fake 25 px grids under display scaling), so every
+    plausible interpretation of every border pair is scored against the
+    internal grid lines and the global best wins — this also rejects the
+    similar-looking header frame around the counters/smiley.
     """
-    a = np.asarray(img).astype(np.int16)
+    a = np.asarray(img)
     h, w, _ = a.shape
-    grey = a.max(axis=2) - a.min(axis=2)                # channel spread
-    g128 = (np.abs(a - 128) <= 8).all(axis=2)           # ~rgb(128) grey
-    white = (a >= 240).all(axis=2) & (grey <= 12)       # near-white
+    mn = a.min(axis=2)
+    mx = a.max(axis=2)
+    g128 = (mn >= 120) & (mx <= 136)                         # ~rgb(128) grey
+    white = (mn >= 240) & ((mx - mn) <= 12)                  # near-white
 
-    for y in range(h):
-        for x_start, length in _runs(g128[y]):
-            if length < 220:
-                continue
-            x0, y0 = x_start + 2, y + 2
-            width = length - 2
-            cols = width / CELL
-            if abs(cols - round(cols)) > 0.15 or y0 + 100 >= h:
-                continue
-            cols = round(cols)
+    grey_cand = _rows_with_run(g128, 220)
+    white_cand = _rows_with_run(white, 214)   # 220 - 6 px length tolerance
+    white_cache = {}
+    best, best_score = None, 1.0            # score floor: reject non-board UI
+    scored = {}                             # geometry -> score (dedupe)
+    for y in grey_cand:
+        y0 = y + 2
+        if y0 + 100 >= h:
+            continue
+        for x_start, length in (r for r in _runs(g128[y]) if r[1] >= 220):
+            x0, width = x_start + 2, length - 2
             # matching white bottom frame
-            for yy in range(y0 + CELL * 8 - 2, min(y0 + CELL * 42 + 2, h)):
-                for bx, bl in _runs(white[yy]):
-                    if abs(bx - x_start) <= 4 and abs(bl - length) <= 6:
-                        rows_f = (yy - y0) / CELL
-                        if abs(rows_f - round(rows_f)) <= 0.1:
-                            rows = round(rows_f)
-                            if rows >= 8:
-                                return BoardGeo(x0=x0, y0=y0,
-                                                rows=rows, cols=cols)
-    return None
+            lo = min(y0 + CELL * 8 - 2, h)
+            hi = min(y0 + CELL * 42 + 2, h)
+            for yy in range(lo, hi):
+                if yy not in white_cand:
+                    continue
+                if yy not in white_cache:
+                    white_cache[yy] = [r for r in _runs(white[yy])
+                                       if r[1] >= 214]
+                for bx, bl in white_cache[yy]:
+                    if abs(bx - x_start) > 4 or abs(bl - length) > 6:
+                        continue
+                    height = yy - y0
+                    for rows, cols, cell in _candidates(width, height):
+                        key = (x0, y0, rows, cols, round(cell, 1))
+                        if key not in scored:
+                            scored[key] = _grid_score(a, x0, y0,
+                                                      rows, cols, cell)
+                        s = scored[key]
+                        if s > best_score:
+                            best_score = s
+                            best = BoardGeo(x0=x0, y0=y0, rows=rows,
+                                            cols=cols, cell=cell)
+    return best
 
 
 # ---------------------------------------------------------------------------
@@ -149,11 +234,26 @@ def classify_cell(cell):
 
 
 def read_board(img, geo: BoardGeo):
-    """Slice the screenshot into cells and classify each -> (rows, cols) int8."""
+    """Slice the screenshot into cells and classify each -> (rows, cols) int8.
+
+    When the board is rendered at a non-canonical pitch (OS display scaling
+    or browser zoom, e.g. 37.5 px cells at 150 %), the board crop is first
+    resampled back to 25 px cells so the classification rules — tuned for
+    25 px structure — apply unchanged."""
     a = np.asarray(img)
+    if abs(geo.cell - CELL) > 0.51:
+        from PIL import Image
+        w = int(round(geo.cols * geo.cell))
+        h = int(round(geo.rows * geo.cell))
+        crop = a[geo.y0:geo.y0 + h, geo.x0:geo.x0 + w]
+        a = np.array(Image.fromarray(crop).resize(
+            (geo.cols * CELL, geo.rows * CELL), Image.BILINEAR))
+        ox = oy = 0
+    else:
+        ox, oy = geo.x0, geo.y0
     board = np.full((geo.rows, geo.cols), UNKNOWN, dtype=np.int8)
     for r in range(geo.rows):
         for c in range(geo.cols):
-            y, x = geo.y0 + r * geo.cell, geo.x0 + c * geo.cell
-            board[r, c] = classify_cell(a[y:y + geo.cell, x:x + geo.cell])
+            y, x = oy + r * CELL, ox + c * CELL
+            board[r, c] = classify_cell(a[y:y + CELL, x:x + CELL])
     return board

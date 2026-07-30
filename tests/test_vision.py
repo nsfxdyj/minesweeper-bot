@@ -36,5 +36,34 @@ def test_all():
     check("mid_postmortem.png", "mid_postmortem_expected.txt", 16, 16)
 
 
+def check_scaled(png, expected_txt, rows, cols, scale):
+    """Simulate OS display scaling (e.g. 1.5 = 150 %): the same board
+    rendered bigger must still locate with the true shape and read every
+    cell correctly (a 16x16@37.5px frame used to fake-match as 24x24@25px).
+    """
+    img = Image.open(os.path.join(FIX, png)).convert("RGB")
+    w, h = img.size
+    img = np.array(img.resize((int(w * scale), int(h * scale)),
+                              Image.BILINEAR))
+    geo = locate_board(img)
+    assert geo is not None, f"board not located in {png} x{scale}"
+    assert (geo.rows, geo.cols) == (rows, cols), \
+        f"x{scale}: detected {geo.rows}x{geo.cols} cell={geo.cell:.2f}"
+    board = read_board(img, geo)
+    expected = np.loadtxt(os.path.join(FIX, expected_txt), dtype=int)
+    diff = int((board != expected).sum())
+    assert diff == 0, f"{png} x{scale}: {diff} cells misread\n{board}\nvs\n{expected}"
+    print(f"OK {png} x{scale}: {rows}x{cols} cell={geo.cell:.1f}, "
+          f"all {rows*cols} cells correct")
+
+
+def test_scaled():
+    for scale in (1.5, 1.25, 2.0):
+        check_scaled("won_board.png", "won_board_expected.txt", 9, 9, scale)
+        check_scaled("mid_postmortem.png", "mid_postmortem_expected.txt",
+                     16, 16, scale)
+
+
 if __name__ == "__main__":
     test_all()
+    test_scaled()
