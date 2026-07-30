@@ -1,0 +1,23 @@
+
+  #  Node.js[1631]: void node::ResetStdio() at ../src/node.cc:670
+  #  Assertion failed: ((*__errno_location ())) == (9)
+
+----- Native stack trace -----
+
+ 1: 0x90f4d7 node::Assert(node::AssertionInfo const&) [/usr/local/lib/python3.12/site-packages/playwright/driver/node]
+ 2: 0x8a8b60  [/usr/local/lib/python3.12/site-packages/playwright/driver/node]
+ 3: 0x7f2de135455d  [/lib/x86_64-linux-gnu/libc.so.6]
+ 4: 0x7f2de135469a  [/lib/x86_64-linux-gnu/libc.so.6]
+ 5: 0x7f487e node::DefaultProcessExitHandlerInternal(node::Environment*, node::ExitCode) [/usr/local/lib/python3.12/site-packages/playwright/driver/node]
+ 6: 0x864a04 node::Environment::Exit(node::ExitCode) [/usr/local/lib/python3.12/site-packages/playwright/driver/node]
+ 7: 0x19d308d  [/usr/local/lib/python3.12/site-packages/playwright/driver/node]
+OK: control panel at http://127.0.0.1:41439/
+[board] origin=(528,135) 9x9
+[pace] r0 done=36/81 inc=10 fin=0 scale=1.00 el=0.6
+[pace] r1 done=46/81 inc=16 fin=0 scale=2.20 el=9.8
+[pace] r2 done=67/81 inc=9 fin=0 scale=2.68 el=15.0
+[pace] r3 done=78/81 inc=3 fin=1 scale=2.55 el=17.3
+[round 4] cleared in 18.0s
+result=win elapsed=18.0s target=18.0s
+wander moves during game: 33
+OK: paced mode works, timing within +-10%, mouse kept thinking

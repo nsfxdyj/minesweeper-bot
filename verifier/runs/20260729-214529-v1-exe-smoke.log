@@ -1,0 +1,5 @@
+A7 exe 冒烟（Wine）:
+命令: wine msbot_test2.exe（PyInstaller onefile，19,362,554 字节，21:43 构建）
+结果: 端口 46067 /state -> {"status": "waiting", "target": null, "detail": ""}
+      页面含"扫雷机器人控制台"=True 含"目标时间"=True
+SMOKE PASS (exit 0)

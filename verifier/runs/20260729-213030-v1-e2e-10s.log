@@ -1,0 +1,23 @@
+OK: control panel at http://127.0.0.1:40975/
+[board] origin=(528,135) 9x9
+[pace] r0 done=51/81 inc=15 fin=0 scale=1.00 el=0.6
+[pace] r1 done=74/81 inc=4 fin=0 scale=3.00 el=10.4
+[pace] r2 done=78/81 inc=3 fin=1 scale=0.28 el=11.0
+[round 3] cleared in 11.6s
+result=win elapsed=11.6s target=10.0s
+Traceback (most recent call last):
+  File "/mnt/agents/output/minesweeper-bot/sandbox_paced_test.py", line 111, in <module>
+    asyncio.run(main())
+  File "/usr/local/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/mnt/agents/output/minesweeper-bot/sandbox_paced_test.py", line 103, in main
+    assert target * 0.9 <= elapsed <= target * 1.1, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: pacing off: 11.6s vs target 10.0s (+-10%)

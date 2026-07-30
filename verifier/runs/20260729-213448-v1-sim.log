@@ -1,0 +1,14 @@
+== A1/A2 仿真收束与动态调整 ==
+  uniform T=10.0s seed=0 elapsed= 9.64s  scale[0.60..2.28]  OK
+  uniform T=10.0s seed=1 elapsed= 9.89s  scale[0.60..2.22]  OK
+  front   T=10.0s seed=0 elapsed= 9.62s  scale[0.60..3.00]  OK
+  front   T=10.0s seed=1 elapsed= 9.65s  scale[0.60..3.00]  OK
+  slow    T=14.5s seed=0 elapsed=16.59s  scale[0.23..1.61]  FAIL
+  slow    T=14.5s seed=1 elapsed=16.26s  scale[0.26..1.43]  FAIL
+== A3/A4/A5 游走行为（6 秒等待窗口）==
+  移动次数=41  离池>60px=0  大跳>150px=0
+  间隔CV=0.98  不同步长数=34/40
+  无效操作期间点击: left=0 right=0
+==================================================
+FAIL: A1 slow seed=0: 16.59s not in [13.1,16.0]
+FAIL: A1 slow seed=1: 16.26s not in [13.1,16.0]

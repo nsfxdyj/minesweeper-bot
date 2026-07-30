@@ -1,0 +1,3 @@
+v3 exe 冒烟（Wine）: exe 19,366,567 字节（01:24 构建，含一致性防护+开销补偿）
+/state -> {"status": "waiting"}  控制台页面完整
+SMOKE PASS (exit 0)

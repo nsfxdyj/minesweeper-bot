@@ -1,0 +1,11 @@
+OK: control panel at http://127.0.0.1:33389/
+[board] origin=(528,135) 9x9
+[pace] r0 done=57/81 inc=13 fin=0 scale=1.00 el=0.8
+[pace] r1 done=70/81 inc=6 fin=0 scale=2.20 el=363.4
+[pace] r2 done=76/81 inc=3 fin=0 scale=2.10 el=395.1
+[pace] r3 done=79/81 inc=1 fin=0 scale=1.87 el=410.6
+[guess] (0, 0)
+[round 4] cleared in 415.9s
+result=win elapsed=415.9s target=420.0s
+wander moves during game: 1430
+OK: paced mode works, timing within +-10%, mouse kept thinking

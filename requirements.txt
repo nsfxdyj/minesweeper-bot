@@ -1,0 +1,4 @@
+numpy>=1.24
+pillow>=10.0
+mss>=9.0           # Windows screen capture (mouse uses raw Win32 API via ctypes)
+playwright>=1.40   # sandbox / e2e test only

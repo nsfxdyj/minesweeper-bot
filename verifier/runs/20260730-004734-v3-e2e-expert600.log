@@ -1,0 +1,257 @@
+[t0] [board] origin=(265,135) 16x30
+[t1] [board] origin=(265,135) 16x30
+[t3] [board] origin=(265,135) 16x30
+[t2] [board] origin=(265,135) 16x30
+[t5] [board] origin=(265,135) 16x30
+[t6] [board] origin=(265,135) 16x30
+[t4] [board] origin=(265,135) 16x30
+[t7] [board] origin=(265,135) 16x30
+[t5] [pace] r0 done=38/480 inc=12 fin=0 scale=1.00 el=3.8
+[t4] [pace] r0 done=28/480 inc=7 fin=0 scale=1.00 el=5.5
+[t0] [pace] r0 done=21/480 inc=4 fin=0 scale=1.00 el=5.7
+[t1] [pace] r0 done=47/480 inc=25 fin=0 scale=1.00 el=5.8
+[t6] [pace] r0 done=31/480 inc=25 fin=0 scale=1.00 el=5.8
+[t7] [pace] r0 done=64/480 inc=27 fin=0 scale=1.00 el=5.8
+[t3] [pace] r0 done=83/480 inc=37 fin=0 scale=1.00 el=5.9
+[t2] [pace] r0 done=42/480 inc=17 fin=0 scale=1.00 el=5.8
+[t0] [pace] r1 done=25/480 inc=2 fin=0 scale=1.32 el=32.6
+[t0] [pace] r2 done=27/480 inc=1 fin=0 scale=1.22 el=35.5
+[t0] [guess] (11, 13)
+[t0] [round 3] BOOM -> lose (37.7s)
+[t0] finished: ('lose', 37.7)
+[t4] [pace] r1 done=35/480 inc=7 fin=0 scale=1.48 el=44.9
+[t4] [pace] r2 done=73/480 inc=41 fin=0 scale=1.37 el=54.1
+[t5] [pace] r1 done=50/480 inc=4 fin=0 scale=1.73 el=63.6
+[t5] [pace] r2 done=65/480 inc=9 fin=0 scale=1.51 el=69.7
+[t6] [pace] r1 done=91/480 inc=28 fin=0 scale=1.80 el=73.3
+[t2] [pace] r1 done=59/480 inc=16 fin=0 scale=1.85 el=76.0
+[t1] [pace] r1 done=72/480 inc=19 fin=0 scale=2.05 el=92.4
+[t5] [pace] r3 done=74/480 inc=10 fin=0 scale=1.49 el=96.1
+[t2] [pace] r2 done=78/480 inc=9 fin=0 scale=1.68 el=96.6
+[t5] [pace] r4 done=84/480 inc=7 fin=0 scale=1.39 el=106.5
+[t2] [pace] r3 done=87/480 inc=3 fin=0 scale=1.53 el=111.3
+[t2] [pace] r4 done=90/480 inc=3 fin=0 scale=1.35 el=116.8
+[t5] [pace] r5 done=91/480 inc=3 fin=0 scale=1.30 el=119.8
+[t1] [pace] r2 done=105/480 inc=15 fin=0 scale=1.84 el=121.6
+[t2] [pace] r5 done=93/480 inc=3 fin=0 scale=0.88 el=122.7
+[t7] [pace] r1 done=116/480 inc=22 fin=0 scale=2.20 el=122.8
+[t5] [pace] r6 done=94/480 inc=5 fin=0 scale=0.85 el=124.0
+[t2] [pace] r6 done=96/480 inc=8 fin=0 scale=0.57 el=126.3
+[t5] [pace] r7 done=99/480 inc=9 fin=0 scale=0.55 el=127.5
+[t2] [pace] r7 done=104/480 inc=5 fin=0 scale=0.88 el=131.7
+[t5] [pace] r8 done=119/480 inc=9 fin=0 scale=0.91 el=137.4
+[t2] [pace] r8 done=109/480 inc=7 fin=0 scale=1.01 el=139.7
+[t2] [pace] r9 done=135/480 inc=15 fin=0 scale=1.07 el=150.3
+[t4] [pace] r3 done=123/480 inc=30 fin=0 scale=2.25 el=156.9
+[t1] [pace] r3 done=120/480 inc=18 fin=0 scale=1.75 el=157.0
+[t6] [pace] r2 done=119/480 inc=33 fin=0 scale=2.26 el=157.3
+[t3] [pace] r1 done=120/480 inc=23 fin=0 scale=2.20 el=160.3
+[t5] [pace] r9 done=141/480 inc=11 fin=0 scale=1.25 el=163.0
+[t7] [pace] r2 done=138/480 inc=21 fin=0 scale=2.14 el=170.1
+[t1] [pace] r4 done=144/480 inc=18 fin=0 scale=1.60 el=174.4
+[t3] [pace] r2 done=159/480 inc=30 fin=0 scale=1.91 el=177.1
+[t6] [pace] r3 done=193/480 inc=43 fin=0 scale=2.06 el=194.3
+[t2] [pace] r10 done=150/480 inc=6 fin=0 scale=1.49 el=194.3
+[t5] [pace] r10 done=158/480 inc=9 fin=0 scale=1.44 el=196.9
+[t2] [pace] r11 done=156/480 inc=6 fin=0 scale=1.32 el=201.6
+[t4] [pace] r4 done=153/480 inc=30 fin=0 scale=2.06 el=202.7
+[t7] [pace] r3 done=159/480 inc=14 fin=0 scale=1.95 el=206.0
+[t2] [pace] r12 done=169/480 inc=22 fin=0 scale=1.22 el=206.9
+[t1] [pace] r5 done=210/480 inc=40 fin=0 scale=1.60 el=207.9
+[t5] [pace] r11 done=167/480 inc=11 fin=0 scale=1.37 el=210.7
+[t7] [pace] r4 done=173/480 inc=18 fin=0 scale=1.69 el=215.6
+[t5] [pace] r12 done=178/480 inc=15 fin=0 scale=1.33 el=224.2
+[t4] [pace] r5 done=193/480 inc=36 fin=0 scale=1.88 el=230.9
+[t3] [pace] r3 done=189/480 inc=26 fin=0 scale=2.11 el=238.2
+[t7] [pace] r5 done=191/480 inc=17 fin=0 scale=1.62 el=241.3
+[t2] [pace] r13 done=192/480 inc=25 fin=0 scale=1.49 el=243.3
+[t5] [pace] r13 done=193/480 inc=10 fin=0 scale=1.34 el=244.4
+[t5] [pace] r14 done=203/480 inc=13 fin=0 scale=1.29 el=254.8
+[t7] [pace] r6 done=208/480 inc=10 fin=0 scale=1.54 el=260.2
+[t3] [pace] r4 done=261/480 inc=37 fin=0 scale=1.94 el=268.1
+[t2] [pace] r14 done=217/480 inc=25 fin=0 scale=1.54 el=276.0
+[t5] [pace] r15 done=244/480 inc=17 fin=0 scale=1.31 el=276.0
+[t7] [pace] r7 done=245/480 inc=19 fin=0 scale=1.44 el=276.6
+[t4] [pace] r6 done=242/480 inc=42 fin=0 scale=2.04 el=286.4
+[t6] [pace] r4 done=245/480 inc=44 fin=0 scale=2.62 el=296.4
+[t2] [pace] r15 done=251/480 inc=17 fin=0 scale=1.55 el=305.5
+[t1] [pace] r6 done=254/480 inc=6 fin=0 scale=2.44 el=312.2
+[t1] [pace] r7 done=260/480 inc=4 fin=0 scale=2.03 el=327.9
+[t5] [pace] r16 done=282/480 inc=29 fin=0 scale=1.75 el=330.9
+[t1] [pace] r8 done=264/480 inc=10 fin=0 scale=1.68 el=333.4
+[t7] [pace] r8 done=272/480 inc=16 fin=0 scale=1.84 el=334.0
+[t2] [pace] r16 done=269/480 inc=16 fin=0 scale=1.59 el=337.7
+[t1] [pace] r9 done=274/480 inc=12 fin=0 scale=1.51 el=344.4
+[t2] [pace] r17 done=285/480 inc=11 fin=0 scale=1.52 el=361.3
+[t4] [pace] r7 done=310/480 inc=33 fin=0 scale=2.28 el=364.6
+[t1] [pace] r10 done=286/480 inc=10 fin=0 scale=1.43 el=365.2
+[t7] [pace] r9 done=288/480 inc=11 fin=0 scale=1.74 el=366.8
+[t6] [pace] r5 done=291/480 inc=25 fin=0 scale=2.53 el=370.2
+[t2] [pace] r18 done=296/480 inc=4 fin=0 scale=1.40 el=374.7
+[t1] [pace] r11 done=296/480 inc=2 fin=0 scale=1.31 el=375.8
+[t7] [pace] r10 done=307/480 inc=21 fin=0 scale=1.53 el=378.9
+[t2] [pace] r19 done=300/480 inc=8 fin=0 scale=1.26 el=379.8
+[t1] [pace] r12 done=298/480 inc=1 fin=0 scale=0.85 el=380.8
+[t1] [guess] (4, 20)
+[t3] [pace] r5 done=300/480 inc=28 fin=0 scale=2.58 el=384.8
+[t1] [pace] r13 done=299/480 inc=10 fin=0 scale=0.55 el=384.8
+[t2] [pace] r20 done=314/480 inc=7 fin=0 scale=1.21 el=389.1
+[t1] [pace] r14 done=321/480 inc=17 fin=0 scale=0.84 el=391.7
+[t5] [pace] r17 done=337/480 inc=22 fin=0 scale=2.02 el=394.7
+[t6] [pace] r6 done=323/480 inc=21 fin=0 scale=2.17 el=398.1
+[t2] [pace] r21 done=321/480 inc=3 fin=0 scale=1.23 el=403.2
+[t2] [pace] r22 done=324/480 inc=1 fin=0 scale=1.17 el=408.4
+[t2] [pace] r23 done=325/480 inc=9 fin=0 scale=0.76 el=411.6
+[t3] [pace] r6 done=328/480 inc=26 fin=0 scale=2.21 el=413.2
+[t7] [pace] r11 done=328/480 inc=26 fin=0 scale=1.60 el=413.6
+[t2] [pace] r24 done=334/480 inc=1 fin=0 scale=0.98 el=420.8
+[t2] [pace] r25 done=335/480 inc=2 fin=0 scale=0.64 el=424.4
+[t1] [pace] r15 done=340/480 inc=4 fin=0 scale=1.32 el=428.6
+[t2] [pace] r26 done=337/480 inc=1 fin=0 scale=0.41 el=429.2
+[t2] [guess] (0, 20)
+[t1] [pace] r16 done=344/480 inc=16 fin=0 scale=1.22 el=435.2
+[t2] [pace] r27 done=338/480 inc=4 fin=0 scale=0.27 el=435.3
+[t6] [pace] r7 done=344/480 inc=10 fin=0 scale=2.00 el=439.0
+[t4] [pace] r8 done=343/480 inc=24 fin=0 scale=2.31 el=440.0
+[t2] [pace] r28 done=342/480 inc=3 fin=0 scale=0.17 el=442.5
+[t2] [pace] r29 done=376/480 inc=16 fin=0 scale=0.12 el=448.1
+[t6] [pace] r8 done=361/480 inc=11 fin=0 scale=1.67 el=448.8
+[t7] [pace] r12 done=374/480 inc=26 fin=0 scale=1.60 el=453.4
+[t3] [pace] r7 done=369/480 inc=22 fin=0 scale=2.00 el=453.5
+[t1] [pace] r17 done=360/480 inc=11 fin=0 scale=1.27 el=457.1
+[t5] [pace] r18 done=359/480 inc=15 fin=0 scale=2.08 el=457.7
+[t4] [pace] r9 done=390/480 inc=34 fin=0 scale=1.99 el=461.1
+[t6] [pace] r9 done=372/480 inc=9 fin=0 scale=1.55 el=467.7
+[t1] [pace] r18 done=371/480 inc=16 fin=0 scale=1.23 el=467.8
+[t5] [pace] r19 done=378/480 inc=20 fin=0 scale=1.78 el=471.1
+[t6] [pace] r10 done=382/480 inc=7 fin=0 scale=1.42 el=476.5
+[t1] [pace] r19 done=391/480 inc=13 fin=0 scale=1.29 el=485.3
+[t6] [pace] r11 done=389/480 inc=2 fin=0 scale=1.35 el=489.5
+[t3] [pace] r8 done=399/480 inc=13 fin=0 scale=1.91 el=490.1
+[t6] [pace] r12 done=391/480 inc=1 fin=0 scale=0.87 el=495.0
+[t6] [guess] (11, 29)
+[t2] [pace] r30 done=392/480 inc=10 fin=0 scale=1.17 el=497.5
+[t6] [pace] r13 done=392/480 inc=1 fin=0 scale=0.57 el=499.8
+[t6] [guess] (1, 11)
+[t5] [pace] r20 done=398/480 inc=8 fin=0 scale=1.70 el=502.8
+[t6] [pace] r14 done=393/480 inc=3 fin=0 scale=0.37 el=505.0
+[t7] [pace] r13 done=400/480 inc=14 fin=0 scale=1.82 el=506.2
+[t6] [pace] r15 done=396/480 inc=1 fin=0 scale=0.24 el=510.1
+[t2] [pace] r31 done=402/480 inc=8 fin=0 scale=1.15 el=510.1
+[t6] [guess] (1, 17)
+[t1] [pace] r20 done=429/480 inc=12 fin=0 scale=1.36 el=517.1
+[t6] [pace] r16 done=397/480 inc=2 fin=0 scale=0.16 el=517.1
+[t5] [pace] r21 done=406/480 inc=12 fin=0 scale=1.49 el=517.2
+[t2] [pace] r32 done=410/480 inc=11 fin=0 scale=1.11 el=519.0
+[t6] [guess] (3, 24)
+[t6] [pace] r17 done=399/480 inc=1 fin=0 scale=0.12 el=524.4
+[t3] [pace] r9 done=412/480 inc=7 fin=0 scale=1.77 el=524.8
+[t7] [pace] r14 done=414/480 inc=10 fin=0 scale=1.62 el=526.9
+[t6] [guess] (3, 26)
+[t5] [pace] r22 done=441/480 inc=18 fin=0 scale=1.36 el=531.6
+[t6] [pace] r18 done=400/480 inc=1 fin=0 scale=0.12 el=531.7
+[t3] [pace] r10 done=419/480 inc=11 fin=0 scale=1.15 el=535.4
+[t6] [guess] (2, 23)
+[t2] [pace] r33 done=446/480 inc=16 fin=0 scale=1.14 el=537.4
+[t6] [pace] r19 done=401/480 inc=1 fin=0 scale=0.12 el=539.0
+[t7] [pace] r15 done=432/480 inc=13 fin=0 scale=1.42 el=539.1
+[t6] [guess] (8, 26)
+[t6] [pace] r20 done=402/480 inc=2 fin=0 scale=0.12 el=542.7
+[t3] [pace] r11 done=430/480 inc=12 fin=0 scale=1.11 el=544.1
+[t4] [pace] r10 done=424/480 inc=18 fin=0 scale=2.26 el=544.2
+[t6] [pace] r21 done=404/480 inc=3 fin=0 scale=0.12 el=545.7
+[t6] [pace] r22 done=407/480 inc=5 fin=0 scale=0.12 el=550.4
+[t3] [pace] r12 done=445/480 inc=3 fin=0 scale=1.15 el=558.1
+[t1] [pace] r21 done=442/480 inc=6 fin=0 scale=1.57 el=558.1
+[t6] [pace] r23 done=412/480 inc=3 fin=0 scale=0.12 el=558.1
+[t4] [pace] r11 done=442/480 inc=8 fin=0 scale=1.88 el=561.6
+[t7] [pace] r16 done=445/480 inc=1 fin=0 scale=1.40 el=563.7
+[t6] [pace] r24 done=434/480 inc=16 fin=0 scale=0.12 el=565.7
+[t1] [pace] r22 done=448/480 inc=3 fin=0 scale=1.38 el=567.7
+[t3] [pace] r13 done=448/480 inc=1 fin=0 scale=1.11 el=567.7
+[t7] [guess] (15, 4)
+[t7] [pace] r17 done=446/480 inc=2 fin=0 scale=0.91 el=572.5
+[t4] [pace] r12 done=450/480 inc=21 fin=0 scale=1.58 el=572.6
+[t1] [pace] r23 done=451/480 inc=8 fin=0 scale=0.90 el=577.3
+[t3] [pace] r14 done=449/480 inc=1 fin=0 scale=0.72 el=577.3
+[t7] [pace] r18 done=448/480 inc=1 fin=0 scale=0.59 el=582.0
+[t6] [pace] r25 done=450/480 inc=11 fin=0 scale=0.12 el=581.9
+[t3] [guess] (0, 4)
+[t5] [pace] r23 done=459/480 inc=6 fin=0 scale=1.67 el=584.1
+[t3] [pace] r15 done=450/480 inc=2 fin=0 scale=0.47 el=586.6
+[t1] [pace] r24 done=459/480 inc=2 fin=0 scale=0.59 el=591.9
+[t2] [pace] r34 done=462/480 inc=10 fin=0 scale=1.56 el=591.8
+[t7] [pace] r19 done=449/480 inc=1 fin=0 scale=0.38 el=592.2
+[t6] [pace] r26 done=461/480 inc=7 fin=0 scale=0.12 el=595.1
+[t5] [pace] r24 done=465/480 inc=2 fin=0 scale=1.09 el=597.8
+[t3] [pace] r16 done=452/480 inc=1 fin=0 scale=0.31 el=597.9
+[t7] [guess] (14, 0)
+[t4] [pace] r13 done=471/480 inc=1 fin=0 scale=1.49 el=601.6
+[t3] [guess] (1, 0)
+[t7] [pace] r20 done=450/480 inc=2 fin=0 scale=0.25 el=602.9
+[t1] [pace] r25 done=461/480 inc=1 fin=0 scale=0.38 el=602.9
+[t4] [guess] (0, 1)
+[t2] [pace] r35 done=472/480 inc=6 fin=0 scale=1.01 el=608.6
+[t3] [pace] r17 done=453/480 inc=3 fin=0 scale=0.20 el=608.7
+[t5] [pace] r25 done=467/480 inc=5 fin=0 scale=0.71 el=608.7
+[t7] [guess] (3, 26)
+[t6] [pace] r27 done=468/480 inc=3 fin=0 scale=0.12 el=608.7
+[t1] [guess] (14, 15)
+[t4] [pace] r14 done=472/480 inc=1 fin=0 scale=0.97 el=611.4
+[t7] [round 21] BOOM -> lose (614.3s)
+[t7] finished: ('lose', 614.3)
+[t1] [pace] r26 done=462/480 inc=2 fin=0 scale=0.25 el=614.3
+[t4] [guess] (0, 0)
+[t6] [pace] r28 done=471/480 inc=1 fin=0 scale=0.12 el=618.9
+[t3] [pace] r18 done=456/480 inc=3 fin=0 scale=0.13 el=619.2
+[t4] [pace] r15 done=473/480 inc=3 fin=0 scale=0.63 el=620.1
+[t2] [pace] r36 done=478/480 inc=2 fin=1 scale=0.66 el=621.1
+[t5] [pace] r26 done=472/480 inc=5 fin=1 scale=0.46 el=621.4
+[t6] [guess] (1, 14)
+[t1] [pace] r27 done=464/480 inc=1 fin=0 scale=0.16 el=624.4
+[t6] [pace] r29 done=472/480 inc=1 fin=0 scale=0.12 el=626.8
+[t2] [round 37] cleared in 628.9s
+[t2] finished: ('win', 629.0)
+[t4] [pace] r16 done=476/480 inc=1 fin=0 scale=0.41 el=629.0
+[t3] [pace] r19 done=459/480 inc=1 fin=0 scale=0.12 el=629.3
+[t6] [guess] (0, 10)
+[t5] [round 27] cleared in 632.2s
+[t5] finished: ('win', 632.2)
+[t4] [guess] (0, 3)
+[t3] [guess] (15, 0)
+[t1] [pace] r28 done=465/480 inc=1 fin=0 scale=0.12 el=633.0
+[t6] [pace] r30 done=473/480 inc=5 fin=0 scale=0.12 el=634.5
+[t4] [pace] r17 done=477/480 inc=3 fin=1 scale=0.27 el=636.0
+[t3] [pace] r20 done=460/480 inc=3 fin=0 scale=0.12 el=636.1
+[t1] [pace] r29 done=466/480 inc=2 fin=0 scale=0.12 el=639.2
+[t6] [pace] r31 done=478/480 inc=2 fin=1 scale=0.12 el=642.2
+[t3] [pace] r21 done=463/480 inc=3 fin=0 scale=0.12 el=642.3
+[t4] [round 18] cleared in 642.3s
+[t4] finished: ('win', 642.3)
+[t1] [pace] r30 done=468/480 inc=6 fin=0 scale=0.12 el=644.6
+[t3] [pace] r22 done=466/480 inc=1 fin=0 scale=0.12 el=646.9
+[t6] [round 32] cleared in 646.9s
+[t6] finished: ('win', 646.9)
+[t3] [guess] (13, 26)
+[t1] [pace] r31 done=474/480 inc=2 fin=0 scale=0.12 el=649.2
+[t3] [pace] r23 done=467/480 inc=2 fin=0 scale=0.12 el=649.9
+[t1] [pace] r32 done=476/480 inc=1 fin=0 scale=0.12 el=651.8
+[t1] [guess] (14, 0)
+[t3] [pace] r24 done=469/480 inc=6 fin=1 scale=0.12 el=653.4
+[t1] [pace] r33 done=477/480 inc=2 fin=0 scale=0.12 el=654.9
+[t1] [guess] (15, 0)
+[t3] [round 25] cleared in 657.1s
+[t3] finished: ('win', 657.1)
+[t1] [round 34] cleared in 657.6s
+[t1] finished: ('win', 657.6)
+========================================================
+  game 0: lose  37.7s
+  game 1: win  657.6s
+  game 2: win  629.0s
+  game 3: win  657.1s
+  game 4: win  642.3s
+  game 5: win  632.2s
+  game 6: win  646.9s
+  game 7: lose  614.3s
+wins: 6/8 (need >= 5)  guard-events: see [tN] lines above
+C4 PASS

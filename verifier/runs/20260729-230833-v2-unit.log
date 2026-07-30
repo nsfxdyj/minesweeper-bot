@@ -1,0 +1,9 @@
+== B1 等待后移位重规划 ==
+  非开局点击=[(131, 136)]
+  命中新计划点(1,1): True  误中旧计划点(0,0): False
+== B2 批中移位修正 ==
+  首击旧原点: True  第5击新原点: True
+== B3 Windows keep-alive ==
+  MOUSEEVENTF_MOVE 常量: True  零位移注入: True  25s 节流: True
+==================================================
+B1/B2/B3 ALL CHECKS PASSED
