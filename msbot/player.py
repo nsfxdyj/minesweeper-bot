@@ -222,12 +222,18 @@ class Player:
         last_board, stale = None, 0
         for rnd in range(max_rounds):
             self._check_stop()
-            board = self._trusted_board(self.scan_stable(), solver.mines)
-            if board is None:
-                return "inconsistent"
+            board = self.scan_stable()
+            # game-over check comes FIRST: a post-mortem board reveals all
+            # mines, which makes every neighbouring number "unsatisfiable"
+            # to the consistency guard (MINE cells count neither as flags
+            # nor unknowns) — validating before this check would misreport
+            # an ordinary loss as "inconsistent"
             if (board == BLAST).any() or (board == MINE).any():
                 self._log(f"[round {rnd}] BOOM -> lose")
                 return "lose"
+            board = self._trusted_board(board, solver.mines)
+            if board is None:
+                return "inconsistent"
             n_unknown = int((board == UNKNOWN).sum())
             n_flags = int((board == FLAG).sum())
             # the site ends the game when every mine is correctly flagged
@@ -325,7 +331,17 @@ class Player:
         for rnd in range(max_rounds):
             self._check_stop()
             rt0 = time.time()
-            board = self._trusted_board(self.scan_stable(), mines)
+            board = self.scan_stable()
+            # game-over check comes FIRST: a post-mortem board reveals all
+            # mines, which makes every neighbouring number "unsatisfiable"
+            # to the consistency guard (MINE cells count neither as flags
+            # nor unknowns) — validating before this check would misreport
+            # an ordinary loss as "inconsistent"
+            if (board == BLAST).any() or (board == MINE).any():
+                self._log(f"[round {rnd}] BOOM -> lose "
+                          f"({pacer.elapsed():.1f}s)")
+                return "lose", pacer.elapsed()
+            board = self._trusted_board(board, mines)
             if board is None:
                 return "inconsistent", pacer.elapsed()
 

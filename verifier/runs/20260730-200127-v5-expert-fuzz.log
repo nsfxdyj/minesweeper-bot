@@ -1,0 +1,8 @@
+[20:01:27] seed=42 sessions=2 budget=3.0min targets=[30.0,60.0] dsf=1.5
+[20:02:06] s0 g1: inconsistent 32s/43s
+[20:02:22] s0 g2: LOSE at 15s/47s verdict=GAMBLE blasts=[(np.int64(7), np.int64(13))] guess_p=0.13410040294176834 misreads=0
+[20:03:03] s1 g1: inconsistent 84s/49s
+[20:03:40] s0 g3: inconsistent 77s/49s
+[20:04:52] s1 g2: win 108s/34s
+[20:05:20] s0 g4: win 99s/50s
+[20:05:21] ---- summary ----

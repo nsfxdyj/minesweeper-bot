@@ -1,0 +1,14 @@
+[20:45:07] seed=7 sessions=2 budget=4.0min targets=[60.0,90.0] dsf=1.5
+[20:46:41] s1 g1: LOSE at 81s/64s verdict=GAMBLE blasts=[(np.int64(9), np.int64(7))] guess_p=0.14070238631247187 misreads=0
+[20:46:50] s0 g1: win 97s/70s
+[20:48:24] s1 g2: win 102s/70s
+[20:48:43] s0 g2: LOSE at 111s/70s verdict=GAMBLE blasts=[(np.int64(0), np.int64(1))] guess_p=0.3333333333333333 misreads=0
+[20:49:57] s1 g3: win 91s/80s
+[20:50:26] s0 g3: win 101s/67s
+[20:50:27] ---- summary ----
+[20:50:27] s0: {"events": [{"game": 1, "target": 69.7, "res": "win", "elapsed": 96.9}, {"game": 2, "target": 70.2, "res": "lose", "elapsed": 111.5, "loss": {"blasts": [[0, 1]], "post_mines": 7, "post_flags": 91, "pre_flags": 91, "actions": {"clicks": [], "flags": [], "guess": [0, 1], "level": 2}, "misreads": [], "guess_p": 0.3333333333333333, "verdict": "GAMBLE"}}, {"game": 3, "target": 66.7, "res": "win", "elapsed": 101.5}], "games": 3}
+[20:50:27] s1: {"events": [{"game": 1, "target": 63.5, "res": "lose", "elapsed": 81.3, "loss": {"blasts": [[9, 7]], "post_mines": 32, "post_flags": 66, "pre_flags": 66, "actions": {"clicks": [], "flags": [], "guess": [9, 7], "level": 2}, "misreads": [], "guess_p": 0.14070238631247187, "verdict": "GAMBLE"}}, {"game": 2, "target": 69.6, "res": "win", "elapsed": 102.4}, {"game": 3, "target": 79.7, "res": "win", "elapsed": 91.2}], "games": 3}
+[20:50:27] games=6 wins=4 rate=67%
+[20:50:27] loss s0 g2: GAMBLE
+[20:50:27] loss s1 g1: GAMBLE
+[20:50:27] verdict: no bug evidence (2 losses, 0 suspicious)

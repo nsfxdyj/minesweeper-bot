@@ -1,0 +1,11 @@
+[20:38:30] seed=7 sessions=2 budget=3.0min targets=[60.0,90.0] dsf=1.5
+[20:39:56] s1 g1: INCONSISTENT at 74s/64s -> C:\Users\Admin\Desktop\work\2026\to_静静\扫雷机器人\debug_out\inc_203955_s1_g1.png
+[20:40:32] s0 g1: win 106s/70s
+[20:41:31] s1 g2: win 95s/70s
+[20:41:58] s0 g2: LOSE at 85s/70s verdict=GAMBLE blasts=[(np.int64(14), np.int64(3))] guess_p=0.23529411764705882 misreads=0
+[20:41:59] ---- summary ----
+[20:41:59] s0: {"events": [{"game": 1, "target": 69.7, "res": "win", "elapsed": 106.1}, {"game": 2, "target": 70.2, "res": "lose", "elapsed": 84.6, "loss": {"blasts": [[14, 3]], "post_mines": 10, "post_flags": 88, "pre_flags": 88, "actions": {"clicks": [], "flags": [], "guess": [14, 3], "level": 2}, "misreads": [], "guess_p": 0.23529411764705882, "verdict": "GAMBLE"}}], "games": 2}
+[20:41:59] s1: {"events": [{"game": 1, "target": 63.5, "res": "inconsistent", "elapsed": 73.7, "evidence": "C:\\Users\\Admin\\Desktop\\work\\2026\\to_静静\\扫雷机器人\\debug_out\\inc_203955_s1_g1.png"}, {"game": 2, "target": 69.6, "res": "win", "elapsed": 94.5}], "games": 2}
+[20:41:59] games=4 wins=2 rate=50%
+[20:41:59] loss s0 g2: GAMBLE
+[20:41:59] verdict: no bug evidence (1 losses, 0 suspicious)
