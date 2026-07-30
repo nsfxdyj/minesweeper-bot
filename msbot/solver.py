@@ -128,16 +128,23 @@ class Solver:
 
     # ------------------------------------------------------------------
     def next_actions(self, board, exact=True):
-        """-> dict(clicks=[(r,c)], flags=[(r,c)], guess=(r,c)|None)
+        """-> dict(clicks=[(r,c)], flags=[(r,c)], guess=(r,c)|None,
+                   level=0|1|2)
 
         Cheap subset inference first; only when it runs dry, invoke the
         exact probability engine — it finds certain moves the inference
         misses (p=0 / p=1) and otherwise gives the least risky guess.
+
+        `level` grades how obvious the batch is, for pacing:
+          0 = falls out of the basic rules / subset differencing
+          1 = certain only via the exact probability engine
+          2 = a genuine gamble (no certain move exists)
         """
         safe, mines = self.infer(board)
         clicks = set(safe)
         flags = set(mines)
         guess = None
+        level = 0
         if not clicks and exact:
             from .probability import exact_probabilities
             res = exact_probabilities(board, self.mines)
@@ -148,12 +155,16 @@ class Solver:
                         clicks.add(cell)
                     elif p == 1.0:
                         flags.add(cell)
-                if not clicks:
+                if clicks:
+                    level = 1
+                else:
                     guess = self._exact_guess(board, probs, free_p)
         if not clicks and guess is None:
             guess = self.guess(board)
+        if guess is not None:
+            level = 2
         return {"clicks": sorted(clicks), "flags": sorted(flags),
-                "guess": guess}
+                "guess": guess, "level": level}
 
     def _exact_guess(self, board, probs, free_p):
         """Pick the lowest-probability cell from exact results."""

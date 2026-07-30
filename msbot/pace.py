@@ -17,6 +17,13 @@ A batch that finishes the game (all mines flagged / every unknown cell
 acted on) is held back until `target - estimated_batch_time`, so the
 winning click lands within a fraction of a second of the target.
 
+Waits are also graded by inference difficulty (Solver `level`): batches
+that fall out of the basic rules wait only ~35 % of their slot (obvious
+moves should not be mulled over), exact-probability certainty ~65 %, and
+genuine gambles ~110 %.  The closed loop re-spends the banked time on
+later batches and the finishing hold still pins the end, so the total
+keeps converging to target ±10 %.
+
 Idle time is spent "thinking": irregular SMALL movements around the
 next candidate click points (hover, approach-and-pull-back, tiny
 circles, micro-jitter, plain staring) — never clicks, never large
@@ -32,6 +39,13 @@ from . import humanize
 class Pacer:
     MIN_SCALE = 0.12          # fastest: delays nearly gone
     MAX_SCALE = 3.0           # slowest: very deliberate movements
+
+    # pre-batch wait multiplier by inference difficulty (Solver level):
+    # obvious batches (basic rules) think briefly, probability-derived
+    # certainty a bit longer, genuine guesses longest.  Banked time is
+    # redistributed by the closed loop and the finishing hold, so the
+    # total still converges on the target.
+    WAIT_FACTOR = {0: 0.35, 1: 0.65, 2: 1.10}
 
     def __init__(self, target, total, delay_base=0.03):
         self.target = float(target)
@@ -116,13 +130,16 @@ class Pacer:
 
     # ------------------------------------------------------------------
     def before_batch(self, done, incoming, finishing,
-                     backend, focus, decoys, area):
+                     backend, focus, decoys, area, level=None):
         """Dynamic delay control, executed before each action batch.
 
         The error is measured against the schedule for the post-batch
         progress `done + incoming`: the batch may not start before its
         own schedule, and `scale` reflects whether we are ahead of or
-        behind where we are about to be."""
+        behind where we are about to be.  `level` (Solver inference
+        difficulty) shrinks the wait for obvious batches and stretches it
+        for gambles; the closed loop hands the banked time to later
+        batches, so the total is unaffected."""
         done_next = min(done + incoming, self.total)
         self.adjust(done_next)
         waited = 0.0
@@ -139,6 +156,10 @@ class Pacer:
         # overhead (scans/planning), so rounds land on their marks
         want = self.target * done_next / self.total
         start_at = want - self.estimate_batch_time(incoming) - self.overhead
+        if level is not None:
+            f = self.WAIT_FACTOR.get(level, 1.0)
+            start_at = self.elapsed() \
+                + max(start_at - self.elapsed(), 0.0) * f
         if self.elapsed() < start_at:
             waited += self.wait_until(start_at, backend, focus,
                                       decoys, area)

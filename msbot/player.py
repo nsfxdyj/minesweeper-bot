@@ -364,12 +364,14 @@ class Player:
                 area = (self.geo.x0, self.geo.y0, cols * 25, rows * 25)
                 self._log(f"[pace] r{rnd} done={resolved}/{total_work} "
                           f"inc={incoming} fin={int(finishing)} "
+                          f"lvl={actions.get('level')} "
                           f"scale={pacer.scale:.2f} "
                           f"el={pacer.elapsed():.1f}"
                           + (f" replan={replan}" if replan else ""))
                 waited = pacer.before_batch(resolved, incoming, finishing,
                                             self.backend, focus, decoys,
-                                            area)
+                                            area,
+                                            level=actions.get("level"))
                 board2 = self.scan_stable()
                 if (board2 == board).all():
                     break

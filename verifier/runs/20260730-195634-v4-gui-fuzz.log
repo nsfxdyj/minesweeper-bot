@@ -1,0 +1,19 @@
+[19:56:34] seed=777 sessions=3
+[19:56:34] s0: target=49s
+[19:56:34] s1: target=58s mid-post=62s
+[19:56:34] s2: target=55s mid-post=42s
+[19:56:39] s0: submitted target 49s
+[19:56:43] s1: submitted target 58s
+[19:56:48] s2: submitted target 55s
+[19:57:12] s1: mid-game POST 62s (queued)
+[19:57:15] s2: mid-game POST 42s (queued)
+[19:57:28] s0: win elapsed=48.7s target=49s attempts=1 wander=109
+[19:57:41] s1: win elapsed=57.5s target=58s attempts=1 wander=191
+[19:57:41] s1: queued next target consumed: True
+[19:57:41] s2: win elapsed=53.2s target=55s attempts=1 wander=170
+[19:57:41] s2: queued next target consumed: True
+[19:57:42] ---- summary ----
+[19:57:42] s0: {'res': 'win', 'elapsed': 48.713855028152466, 'attempts': 1, 'wall': 48.84924340248108, 'wander': 109}
+[19:57:42] s1: {'res': 'win', 'elapsed': 57.45071768760681, 'attempts': 1, 'wall': 57.55691885948181, 'wander': 191, 'queued_consumed': True}
+[19:57:42] s2: {'res': 'win', 'elapsed': 53.17673134803772, 'attempts': 1, 'wall': 53.31018805503845, 'wander': 170, 'queued_consumed': True}
+[19:57:42] verdict: PASS
